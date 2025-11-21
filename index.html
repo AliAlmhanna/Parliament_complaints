@@ -33,6 +33,22 @@ body {
   animation: fadeIn 1s ease;
 }
 
+/* الصور أعلى الصفحة */
+.header-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.header-images img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 /* العنوان */
 h2 {
   font-size: 26px;
@@ -119,6 +135,13 @@ button:hover {
 <body>
 
 <div class="container">
+
+  <!-- الصور أعلى الصفحة -->
+  <div class="header-images">
+    <img src="https://github.com/AliAlmhanna/Parliament_complaints/blob/main/photo_%D9%A2%D9%A0%D9%A2%D9%A5-%D9%A1%D9%A0-%D9%A1%D9%A2_%D9%A1%D9%A8-%D9%A1%D9%A6-%D9%A4%D9%A1.jpg?raw=true">
+    <img src="https://github.com/AliAlmhanna/Parliament_complaints/blob/main/photo_%D9%A2%D9%A0%D9%A2%D9%A4-%D9%A1%D9%A2-%D9%A2%D9%A1_%D9%A2%D9%A1-%D9%A3%D9%A6-%D9%A1%D9%A0.jpg?raw=true">
+  </div>
+
   <h2>شكاوي البرلمان الطلابي</h2>
 
   <input type="text" id="name" placeholder="الاسم الكامل" required>
@@ -134,7 +157,7 @@ button:hover {
   <button onclick="sendReport()">إرسال التبليغ</button>
 
   <div class="footer">
-    <p>🏫 العنوان: ثانوية الوايلي للمتميزين</p>
+    <p>🏫 العنوان: ثانوية الوائلي للمتميزين</p>
     <p>📌 البرلمان الطلابي يسعى لتطوير بيئة تعليمية أفضل، ويهتم بسماع كل شكوى أو اقتراح.</p>
     <p>🔗 قناة البرلمان على تيليجرام: <a href="https://t.me/alwaely_Parliament" target="_blank">https://t.me/alwaely_Parliament</a></p>
   </div>
