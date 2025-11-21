@@ -2,59 +2,67 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8" />
-<title>البرلمان الطلابي</title>
+<title>شكاوي البرلمان الطلابي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-body {
+/* إعدادات عامة */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Cairo", sans-serif;
-  background: linear-gradient(135deg, #3a7bd5, #3abdbd);
+}
+body {
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   direction: rtl;
-  user-select: none;
 }
 
+/* صندوق النموذج */
 .container {
-  max-width: 430px;
-  margin: 70px auto;
-  background: #ffffffd9;
-  backdrop-filter: blur(12px);
-  padding: 30px 25px;
-  border-radius: 22px;
-  box-shadow: 0 12px 35px #00000030;
-  animation: fadeIn 1.1s ease;
-  transition: 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(35px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-h2 {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 450px;
   text-align: center;
-  color: #222;
+  animation: fadeIn 1s ease;
+}
+
+/* العنوان */
+h2 {
+  font-size: 26px;
   font-weight: 800;
-  font-size: 23px;
   margin-bottom: 20px;
-  animation: float 3s infinite ease-in-out;
+  color: #222;
+  position: relative;
 }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+h2::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg,#3a7bd5,#00d2ff);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
+/* الحقول */
 input, select, textarea {
   width: 100%;
-  margin: 12px 0;
   padding: 14px;
+  margin: 12px 0;
+  border-radius: 12px;
   border: none;
-  border-radius: 14px;
-  background: #f3f3f3;
+  background: #f0f0f0;
   font-size: 15px;
   transition: 0.25s ease;
-  box-shadow: inset 0 4px 10px #00000015;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.1);
 }
 
 input:focus, select:focus, textarea:focus {
@@ -63,39 +71,55 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
+/* زر الإرسال */
 button {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #005eff, #00aaff);
-  color: white;
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  color: #fff;
   font-size: 17px;
   border: none;
-  border-radius: 14px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.25s ease;
   font-weight: bold;
+  transition: 0.3s ease;
+  margin-top: 10px;
 }
 
 button:hover {
-  transform: scale(1.06);
-  box-shadow: 0 10px 20px #00000035;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
+/* نص أسفل الصفحة */
 .footer {
-  text-align: center;
   margin-top: 25px;
-  color: #fff;
   font-size: 14px;
-  font-weight: 600;
-  opacity: 0.92;
-  padding-bottom: 20px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.footer a {
+  color: #3a7bd5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* تأثير الظهور */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h2>نموذج إرسال تبليغ</h2>
+  <h2>شكاوي البرلمان الطلابي</h2>
 
   <input type="text" id="name" placeholder="الاسم الكامل" required>
   <input type="text" id="grade" placeholder="الصف" required>
@@ -108,10 +132,12 @@ button:hover {
   <textarea id="message" placeholder="اكتب التبليغ هنا..." rows="4" required></textarea>
 
   <button onclick="sendReport()">إرسال التبليغ</button>
-</div>
 
-<div class="footer">
-  Ali Almhanna © 2025 — ALL Rights Reserved
+  <div class="footer">
+    <p>🏫 العنوان: ثانوية الوايلي للمتميزين</p>
+    <p>📌 البرلمان الطلابي يسعى لتطوير بيئة تعليمية أفضل، ويهتم بسماع كل شكوى أو اقتراح.</p>
+    <p>🔗 قناة البرلمان على تيليجرام: <a href="https://t.me/alwaely_Parliament" target="_blank">https://t.me/alwaely_Parliament</a></p>
+  </div>
 </div>
 
 <script>
